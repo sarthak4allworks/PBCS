@@ -831,7 +831,7 @@ $('document').ready(function(){
                                     '</div>'+
                                     '<br/><br/>'+
                                     '<div id="lt">Give Your Priority Here</div>'+
-                                    '<br><br>'+
+                                    '<br/><br/>'+
                                     '<div id="drp" class="lt1">'+
                                       '<table>'+
                                         '<tr class="select1" id="drp1">'+
@@ -918,8 +918,8 @@ $('document').ready(function(){
                                     '</div>'+
                                     '<br>'+
                                     '<button id="nc" type="button" name="button">Now Compare</button>'+
-                            '</center>'+
-                            '<br><br><br><br>');
+                            '<br/><br/><br/><br/>');
+                      
                                   }
                                   else if(count == 3)
                                   {
@@ -3423,7 +3423,7 @@ $('document').ready(function(){
       success: function(response)
       {
         // alert("here in ajax "+response[0].img);
-        console.log("Success "+response.length);
+        // console.log("Success "+response.length);
         var len = response.length;
         // alert("response from server is "+response);
         // alert("length is "+len+" "+v.length);
@@ -3536,12 +3536,12 @@ $('document').ready(function(){
       if(pr == "6")
       {
         priceArray.push("70000");
-        priceArray.push("100000");
+        priceArray.push("100001");
       }
       if(pr == "7")
       {
         priceArray.push("100000");
-        priceArray.push("120000");
+        priceArray.push("120001");
       }
       if(pr == "8")
       {
@@ -3552,214 +3552,6 @@ $('document').ready(function(){
     $("input[name='brand']:checked").each(function(){
       brandsArray.push($(this).val());
     });
-    // $("input[name='screen']:checked").each(function(){
-    //   var scr = $(this).val();
-    //   if(scr == "Yes")
-    //   {
-    //     screenArray.push(scr);
-    //   }
-    //   if(scr == "1")
-    //   {
-    //     if(screenArray[0] != "Yes")
-    //     {
-    //       screenArray[0] = "No";
-    //     }
-    //       screenArray.push("0 inches");
-    //       screenArray.push("12 inches");
-    //   }
-    //   if(scr == "2")
-    //   {
-    //     if(screenArray[0] != "Yes")
-    //     {
-    //       screenArray[0] = "No";
-    //     }
-    //       screenArray.push("12 inches");
-    //       screenArray.push("13 inches");
-    //   }
-    //   if(scr == "3")
-    //   {
-    //     if(screenArray[0] != "Yes")
-    //     {
-    //       screenArray[0] = "No";
-    //     }
-    //       screenArray.push("13 inches");
-    //       screenArray.push("14 inches");
-    //   }
-    //   if(scr == "4")
-    //   {
-    //     if(screenArray[0] != "Yes")
-    //     {
-    //       screenArray[0] = "No";
-    //     }
-    //       screenArray.push("14 inches");
-    //       screenArray.push("15 inches");
-    //   }
-    //   if(scr == "5")
-    //   {
-    //     if(screenArray[0] != "Yes")
-    //     {
-    //       screenArray[0] = "No";
-    //     }
-    //       screenArray.push("15 inches");
-    //       screenArray.push("16 inches");
-    //   }
-    //   if(scr == "6")
-    //   {
-    //     if(screenArray[0] != "Yes")
-    //     {
-    //       screenArray[0] = "No";
-    //     }
-    //       screenArray.push("16 inches");
-    //       screenArray.push("100 inches");
-    //   }
-    // });
-    // $("input[name='screenresolution']:checked").each(function(){
-    //   screenResolutionArray.push($(this).val());
-    // });
-    // $("input[name='cpu']:checked").each(function(){
-    //   cpuArray.push($(this).val());
-    // });
-    // $("input[name='rpm']:checked").each(function(){
-    //   hdRPMArray.push($(this).val());
-    // });
-    // $("input[name='hd']:checked").each(function(){
-    //   var val1 = $(this).val();
-    //   if(val1 == "1")
-    //   {
-    //     hdArray.push("320 GB");
-    //     hdArray.push("500 GB");
-    //     hdArray.push("720 GB");
-    //     hdArray.push("1 TB");
-    //   }
-    //   if(val1 == "2")
-    //   {
-    //     if(hdArray.length == 0)
-    //     {
-    //       hdArray.push("500 GB");
-    //       hdArray.push("720 GB");
-    //       hdArray.push("1 TB");
-    //     }
-    //   }
-    //   if(val1 == "3")
-    //   {
-    //     if(hdArray.length == 0)
-    //     {
-    //       hdArray.push("720 GB");
-    //       hdArray.push("1 TB");
-    //     }
-    //   }
-    //   if(val1 == "4")
-    //   {
-    //     if(hdArray.length == 0)
-    //     {
-    //       hdArray.push("1 TB");
-    //     }
-    //   }
-    // });
-    // $("input[name='ram']:checked").each(function(){
-    //   var val1 = $(this).val();
-    //   if(val1 == "1")
-    //   {
-    //     ramArray.push("2 GB");
-    //     ramArray.push("3 GB");
-    //     ramArray.push("4 GB");
-    //     ramArray.push("6 GB");
-    //     ramArray.push("8 GB");
-    //   }
-    //   if(val1 == "2")
-    //   {
-    //     if(ramArray.length == 0)
-    //     {
-    //       ramArray.push("3 GB");
-    //       ramArray.push("4 GB");
-    //       ramArray.push("6 GB");
-    //       ramArray.push("8 GB");
-    //     }
-    //   }
-    //   if(val1 == "3")
-    //   {
-    //     if(ramArray.length == 0)
-    //     {
-    //       ramArray.push("4 GB");
-    //       ramArray.push("6 GB");
-    //       ramArray.push("8 GB");
-    //     }
-    //   }
-    //   if(val1 == "4")
-    //   {
-    //     if(ramArray.length == 0)
-    //     {
-    //       ramArray.push("6 GB");
-    //       ramArray.push("8 GB");
-    //     }
-    //   }
-    //   if(val1 == "5")
-    //   {
-    //     if(ramArray.length == 0)
-    //     {
-    //       ramArray.push("8 GB");
-    //     }
-    //   }
-    // });
-    // $("input[name='os']:checked").each(function(){
-    //   var val1 = $(this).val();
-    //   if(val1 == "1")
-    //   {
-    //       osArray.push("Windows 8 (64-bit)");
-    //       osArray.push("Windows 8.1 (64-bit)");
-    //   }
-    //   else if(val1 == "2")
-    //   {
-    //       osArray.push("Windows 7 (64-bit)");
-    //       osArray.push("Windows 7 Professional (64-bit)");
-    //       osArray.push("Windows 7 Home Premium");
-    //       osArray.push("Windows 7 Home Basic (32-bit)");
-    //       osArray.push("Windows 7 Professional (32-bit)");
-    //   }
-    //   else {
-    //       osArray.push($(this).val());
-    //   }
-    // });
-    // $("input[name='bb']:checked").each(function(){
-    //   var val1 = $(this).val();
-    //   if(val1 == "1")
-    //   {
-    //     batteryArray.push("Upto 3.5 Hours");
-    //     batteryArray.push("Upto 4 Hours");
-    //     batteryArray.push("Upto 5 Hours");
-    //     batteryArray.push("Upto 4.5 Hours");
-    //     batteryArray.push("Upto 6 Hours");
-    //     batteryArray.push("Upto 6.5 Hours");
-    //     batteryArray.push("Upto 7 Hours");
-    //     batteryArray.push("Upto 7.2 Hours");
-    //     batteryArray.push("Upto 8 Hours");
-    //     batteryArray.push("Upto 8.5 Hours");
-    //   }
-    //   if(val1 == "2")
-    //   {
-    //     batteryArray.push("Upto 5 Hours");
-    //     batteryArray.push("Upto 6 Hours");
-    //     batteryArray.push("Upto 6.5 Hours");
-    //     batteryArray.push("Upto 7 Hours");
-    //     batteryArray.push("Upto 7.2 Hours");
-    //     batteryArray.push("Upto 8 Hours");
-    //     batteryArray.push("Upto 8.5 Hours");
-    //   }
-    //   if(val1 == "3")
-    //   {
-    //     batteryArray.push("Upto 7 Hours");
-    //     batteryArray.push("Upto 8 Hours");
-    //     batteryArray.push("Upto 8.5 Hours");
-    //     batteryArray.push("Upto 7.2 Hours");
-    //   }
-    //   batteryArray.push("Upto 9 Hours");
-    //   batteryArray.push("Upto 10 Hours");
-    //   batteryArray.push("Upto 10.5 Hours");
-    //   batteryArray.push("Upto 11 Hours");
-    //   batteryArray.push("Upto 12 Hours");
-    //   batteryArray.push("Upto 40 Hours");
-    //   batteryArray.push("Upto 45 Hours");
-    // });
 
     $.ajax({
       url: 'http://localhost:3000/filter',
@@ -3773,9 +3565,74 @@ $('document').ready(function(){
       ),
       success: function(response)
       {
-        console.log("Success "+response);
-        alert("response from server is "+response);
+        // console.log("Success "+response);
+        // alert("response from server is "+response[0].key);
         // alert("Success");
+        $('#fill').empty();
+        var length = response.length;
+        // alert(length);
+        // debugger;
+        for(var i=0 ; i<length ; i++)
+        {
+          $('#fill').append(''+
+          '<div class="product">'+
+            '<div class="left_product">'+
+              '<center><a href="http://localhost:3000/pro/'+response[i].key+'"><img src="'+response[i].img+'" alt="no laptop" width="100" height="100"></a></center>'+
+            '</div>'+
+            '<div class="mid_product">'+
+              '<div class="mid_product_up">'+
+                '<a href="http://localhost:3000/pro/'+response[i].key+'" class="nm">'+response[i].name+'</a>'+
+              '</div>'+
+              '<div class="mid_product_down">'+
+                '<div class="mid_product_down_up">'+
+                  '<div class="mid_product_down_up_left">'+
+                    '<b>Product Features:</b>'+
+                  '</div>'+
+                  '<div class="mid_product_down_up_right">'+
+                    '<a href="http://localhost:3000/pro/'+response[i].key+'">See Full Specifications</a>'+
+                  '</div>'+
+                '</div>'+
+                '<div style="height:2px"></div>'+
+                '<div class="mid_product_down_down">'+
+                  '<div class="mid_product_down_down_left">'+
+                    '<i class="fa fa-check" aria-hidden="true"></i>&nbsp;'+response[i].specifications.full_specs.Processor.Processor+
+                    '<br>'+
+                    '<i class="fa fa-check" aria-hidden="true"></i>&nbsp;'+response[i].specifications.full_specs.Processor.Speed+' Clock Speed'+
+                    '<br>'+
+                    '<i class="fa fa-check" aria-hidden="true"></i>&nbsp;'+response[i].specifications.full_specs.Memory.RAM+' RAM'+
+                    '<br>'+
+                    '<i class="fa fa-check" aria-hidden="true"></i>&nbsp;'+response[i].specifications.full_specs.Memory['Hard Disk Capacity']+' Hard Disk'+
+                  '</div>'+
+                  '<div class="mid_product_down_down_right">'+
+                    '<i class="fa fa-check" aria-hidden="true"></i>&nbsp;'+
+                     response[i].specifications.full_specs.Graphics.GPU+
+                    '<br>'+
+              '<i class="fa fa-check" aria-hidden="true"></i>&nbsp;'+response[i].specifications.full_specs.Display.Size+', '+response[i].specifications.full_specs.Display.Resolution+
+                    '<br>'+
+                    '<i class="fa fa-check" aria-hidden="true"></i>&nbsp;'+response[i].specifications.full_specs.General.OS+ 'OS'+
+                    '<br>'+
+                    '<i class="fa fa-check" aria-hidden="true"></i>&nbsp;'+response[i].specifications.full_specs.General.Warranty+
+                  '</div>'+
+                '</div>'+
+              '</div>'+
+            '</div>'+
+            '<div class="right_product">'+
+              '<div class="right_product_up">'+
+                '<center><b>Rs. '+response[i].price+'</b></center>'+
+              '</div>'+
+              '<div class="right_product_down">'+
+                '<center>'+
+                  '<button type="button" class='+response[i].key+' id="comp" name="compare" onclick="openCompare(this)"><i class="fa fa-plus-square" aria-hidden="true">'+
+                    '</i>&nbsp;compare'+
+                  '</button>'+
+                  '<button type="button" class='+response[i].key+' id="comp1" name="compare" onclick="openCompare1(this)"><i class="fa fa-remove" aria-hidden="true">'+
+                    '</i>&nbsp;compare'+
+                  '</button>'+
+                '</center>'+
+              '</div>'+
+            '</div>'+
+          '</div><div style="height:2px"></div>');
+        }
       }
     });
   });

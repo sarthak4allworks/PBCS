@@ -60,9 +60,9 @@ module.exports.front1 = function(req, res, next)
 }
 
 module.exports.front = function(req, res, next) {
-  console.log("here in webcontroller");
+  // console.log("here in webcontroller");
   var page = req.params.page || 1;
-  console.log("Page no is "+page);
+  // console.log("Page no is "+page);
   var requestOptions = {
     url: 'http://localhost:3000/api/front',
     method: 'get',
@@ -187,19 +187,77 @@ module.exports.compItems = function(req, res, next)
 
 module.exports.filter = function(req, res, next)
 {
-  var requestOptions = {
-    url: 'http://localhost:3000/api/filter',
-    method: 'POST',
-    json: req.body
-  }
-  request(requestOptions, function(error, response, body){
-    if(error)
+  var price = req.body.pr;
+  var brand = req.body.brand;
+  var pl = price.length;
+  var bl = brand.length;
+  // console.log(price+" "+pl);
+  // console.log(brand+" "+bl);
+  if(pl>0)
+  {
+    if(bl>0)
     {
-      return res.status(500).send(error);
+      var requestOptions = {
+        url: 'http://localhost:3000/api/filter1',
+        method: 'POST',
+        json: req.body
+      }
+      request(requestOptions, function(error, response, body){
+        if(error)
+        {
+          return res.status(500).send(error);
+        }
+        else {
+            // console.log("Inside Web server with price and brand both "+body);
+            // console.log(body[0]);
+            res.json(body);
+        }
+      });
     }
-    else {
-        console.log("Inside Web server "+body);
-        res.json(body);
+    else
+    {
+      var requestOptions = {
+        url: 'http://localhost:3000/api/filter',
+        method: 'POST',
+        json: req.body
+      }
+      request(requestOptions, function(error, response, body){
+        if(error)
+        {
+          return res.status(500).send(error);
+        }
+        else {
+            // console.log("Inside Web server with only price "+body);
+            // console.log(body[0]);
+            res.json(body);
+        }
+      });
     }
-  });
+  }
+  else
+  {
+    if(bl>0)
+    {
+      var requestOptions = {
+        url: 'http://localhost:3000/api/filter2',
+        method: 'POST',
+        json: req.body
+      }
+      request(requestOptions, function(error, response, body){
+        if(error)
+        {
+          return res.status(500).send(error);
+        }
+        else {
+            // console.log("Inside Web server with only brand "+body);
+            // console.log(body[0]);
+            res.json(body);
+        }
+      });
+    }
+    else
+    {
+      res.redirect("/");
+    }
+  }
 }

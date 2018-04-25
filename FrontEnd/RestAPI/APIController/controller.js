@@ -132,12 +132,53 @@ module.exports.filter = function(req, res, next)
     // product.find({$or:[{"specifications.full_specs.Memory.RAM": {$in:ram}}, {"specifications.full_specs.Memory.RAM": {$gte:ram[0]}}]})
     // console.log(os);
     // product.find({"specifications.full_specs.General.OS": {$in:os}})
-    product.find({price:{$gt:parr[0], $lt:parr[parrl-1]}}).exec(function(error, result){
+    // console.log(parr);
+    // console.log(parr[0]);
+    // console.log(parr[parrl-1]);
+    product.find({price:{$gte:parr[0], $lte:parr[parrl-1]}}).exec(function(error, result){
       if(error){
         console.log("here is an error in filtering");
       }
       else {
-            console.log("Rest API "+result);
+            // console.log("Rest API with only price result "+result);
+            res.json(result);
+      }
+    });
+}
+
+module.exports.filter1 = function(req, res, next)
+{
+  // console.log("we are here in filter api");
+  var parr = req.body.pr;
+  var brand = req.body.brand;
+
+  var parrl = parr.length;
+  var brandl = brand.length;
+    product.find({price:{$gt:parr[0], $lt:parr[parrl-1]}}).find({brand:{$in: brand}}).exec(function(error, result){
+      if(error){
+        console.log("here is an error in filtering");
+      }
+      else {
+            // console.log("Rest API with brand and price result  "+result);
+            res.json(result);
+      }
+    });
+}
+
+module.exports.filter2 = function(req, res, next)
+{
+  // console.log("we are here in filter api");
+  var parr = req.body.pr;
+  var brand = req.body.brand;
+
+  var parrl = parr.length;
+  var brandl = brand.length;
+    product.find({brand:{$in: brand}}).exec(function(error, result){
+      if(error){
+        console.log("here is an error in filtering");
+      }
+      else {
+            // console.log("Rest API with only brand result "+result);
             res.json(result);
       }
     });
