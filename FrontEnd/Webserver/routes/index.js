@@ -19,4 +19,6 @@ router.post('/ajo', control.key_i);
 
 router.post('/compItems', control.compItems);
 
+router.post('/prioritiesItems', control.prioritiesItems);
+
 module.exports = router;

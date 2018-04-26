@@ -93,11 +93,46 @@ PythonShell.run('MainComparator.py', options, function (err, results) {
       sendJSONresponse(res, 406, error);
     }
     else {
-      // console.log("Here in rest API");
-      // console.log("Inside");
-      // console.log(tt);
       var rr = {aa:results, bb:result};
-      // console.log(rr);
+      res.json(rr);
+    }
+  });
+});
+}
+
+module.exports.prioritiesItems = function(req, res, next)
+{
+  console.log("Here is in restAPI controller");
+  var v1 = req.body.dat1;
+  var v2 = req.body.dat2;
+  var v3 = req.body.dat3;
+  var v4 = req.body.dat4;
+  var a1 = req.body.at1;
+  var a2 = req.body.at2;
+  var a3 = req.body.at3;
+  var a4 = req.body.at4;
+  var a5 = req.body.at5;
+  // console.log(v1+" "+v2+" "+v3+" "+v4+" "+a1+" "+a2+" "+a3+" "+a4+" "+a5);
+  var options = {
+  mode: 'json',
+  pythonPath: 'python',
+  pythonOptions: ['-u'],
+  scriptPath: '../Comparator/',
+  args: [v1,v2,v3,v4,a1,a2,a3,a4,a5]
+};
+
+PythonShell.run('Prioritise.py', options, function (err, results) {
+  if (err)
+  {
+    console.log(err);
+  }
+  product.find().where({key:{$in:[v1,v2,v3,v4]}}).exec(function(error, result){
+    if(error)
+    {
+      sendJSONresponse(res, 406, error);
+    }
+    else {
+      var rr = {aa:results, bb:result};
       res.json(rr);
     }
   });

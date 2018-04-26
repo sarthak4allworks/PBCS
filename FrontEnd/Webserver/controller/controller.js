@@ -131,12 +131,7 @@ module.exports.key_i = function(req, res, next)
       return res.status(500).send(error);
     }
     else {
-      // debugger;
-      // console.log("Key_i "+body[0].price);
-      // var tt = {pp:body[0]};
-      // res.render('product_info',tt);
       res.json(body[0]);
-      // return tt;
     }
   });
 }
@@ -163,8 +158,6 @@ module.exports.search = function(req, res, next)
 
 module.exports.compItems = function(req, res, next)
 {
-  var key1 = req.body.dat1;
-  console.log("first key is "+key1);
   var requestOptions = {
     url: 'http://localhost:3000/api/compItems',
     method: 'POST',
@@ -176,9 +169,28 @@ module.exports.compItems = function(req, res, next)
       return res.status(500).send(error);
     }
     else {
-      // console.log("we are return on webserver with result");
-      // console.log(body.a[0][key1]);
-      // console.log(body.b[0]);
+      // console.log("Here is in webserver");
+      // console.log(body);
+      res.json(body);
+    }
+  });
+}
+
+module.exports.prioritiesItems = function(req, res, next)
+{
+  // console.log("Here is in web server controller");
+  var requestOptions = {
+    url: 'http://localhost:3000/api/prioritiesItems',
+    method: 'POST',
+    json: req.body
+  }
+  request(requestOptions, function(error, response, body){
+    if(error)
+    {
+      return res.status(500).send(error);
+    }
+    else {
+      // console.log("Inside web server");
       // console.log(body);
       res.json(body);
     }

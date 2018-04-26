@@ -22,4 +22,6 @@ router.post('/search', control.search);
 
 router.post('/compItems', control.compItems);
 
+router.post('/prioritiesItems', control.prioritiesItems);
+
 module.exports = router;
